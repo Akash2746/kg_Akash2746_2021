@@ -1,4 +1,4 @@
-// Hash map to convert digits into words
+// Hash map to convert digits into words.
 let map=new Map;
 map[0]='Zero';
 map[1]='One';
@@ -11,28 +11,32 @@ map[7]='Seven';
 map[8]='Eight';
 map[9]='Nine';
 
-//initalizing input array and string to store converted words
-let string=['10','300','5'];
+
+//readind inputs from command line and 
+//string 's' to store converted digits to words.
+let string=process.argv.slice(2);
 let  s='';
 
-//loops to get each digit in the input array 
+//loops to get each digit in the input array. 
 string.forEach(element => {
     for(let i=0;i<element.length;i++){
         var n=element.charAt(i);
-        //parsing only if it is a digit
+        //parsing only if it is a digit.
         if(Number.isInteger(parseInt(n)))
         {
-            //append digits that are converted to string
+            //append digits that are converted to string.
             s=s+(map[element.charAt(i)]);
         }
         else{
+            //if an element in the input appray is not a digit
+            //prints 'Not a number'
             console.log("Not a number: "+element)
             return;
         }
     }
-    //separate each number with a comma
+    //separate each number with a comma.
     s=s+',';
     
 });
-//print converted digits to words in a single line
+//print converted digits to words in a single line.
 console.log(s.slice(0,s.length-1));
