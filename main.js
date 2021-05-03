@@ -14,9 +14,9 @@ map[9]='Nine';
 
 //readind inputs from command line and 
 //string 's' to store converted digits to words.
-let string=process.argv.slice(2);
+//let string=process.argv.slice(2);
 let  s='';
-
+let string=['10','300','5'];
 //loops to get each digit in the input array. 
 string.forEach(element => {
     for(let i=0;i<element.length;i++){
